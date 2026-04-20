@@ -31,4 +31,8 @@ public class Sensor {
             return capacidad;
         }
     }
+
+    public Boolean esDuradero(){
+        return this.durabilidad > this.capacidad *2;
+    }
 }
