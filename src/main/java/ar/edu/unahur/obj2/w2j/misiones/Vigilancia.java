@@ -9,6 +9,10 @@ import java.util.List;
 public class Vigilancia implements Mision{
     private List<Sensor> sensores = new ArrayList<>();
 
+    public Vigilancia(List<Sensor> sensores) {
+        this.sensores = sensores;
+    }
+
     public List<Sensor> cantSensores(){
         return sensores;
     }

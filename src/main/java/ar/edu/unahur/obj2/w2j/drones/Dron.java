@@ -29,10 +29,6 @@ public class Dron {
         return procesamiento;
     }
 
-    public void setProcesamiento(Integer procesamiento){
-        this.procesamiento = procesamiento;
-    }
-
     public Mision getmision(){
         return mision;
     }

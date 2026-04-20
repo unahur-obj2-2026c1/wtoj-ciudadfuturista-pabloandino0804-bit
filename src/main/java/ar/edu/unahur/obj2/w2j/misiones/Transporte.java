@@ -3,6 +3,9 @@ package ar.edu.unahur.obj2.w2j.misiones;
 import ar.edu.unahur.obj2.w2j.drones.Dron;
 
 public class Transporte implements Mision{
+    public Transporte() {
+    }
+
     @Override
     public Integer eficienciaOpExtra(){
         return 100;

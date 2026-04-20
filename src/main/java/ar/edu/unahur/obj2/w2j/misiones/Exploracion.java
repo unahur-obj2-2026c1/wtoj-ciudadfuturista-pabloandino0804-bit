@@ -3,6 +3,11 @@ package ar.edu.unahur.obj2.w2j.misiones;
 import ar.edu.unahur.obj2.w2j.drones.Dron;
 
 public class Exploracion implements Mision{
+
+    public Exploracion(){
+        
+    }
+
     @Override
     public Integer eficienciaOpExtra(){
         return 0;
