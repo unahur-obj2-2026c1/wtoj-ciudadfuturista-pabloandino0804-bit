@@ -21,9 +21,16 @@ public class Escuadron {
     }
 
     public Boolean puedeOperarLaZona(Zona zona){
-        if (this.drones.stream().anyMatch(d->d.esAvanzado()) && ciudad.getCantidadMaxima() > zona.tamanoTotal() * 2){
+        if (this.drones.stream().anyMatch(d -> d.esAvanzado()) && ciudad.getCantidadMaxima() > zona.tamanoTotal() * 2){
             return true;
         }
         return false;
+    }
+
+    public void operarZonaSiPuede(Zona zona) {
+        if(this.puedeOperarLaZona(zona)){
+            this.drones.stream().forEach(d -> d.disminuirAutonomia());
+            zona.recibirOperacion();
+        }
     }
 }

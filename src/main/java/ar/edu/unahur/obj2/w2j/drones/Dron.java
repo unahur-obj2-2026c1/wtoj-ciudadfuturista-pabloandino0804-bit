@@ -21,8 +21,8 @@ public class Dron {
         return autonomia;
     }
 
-    public void setAutonomia(Integer autonomia){
-        this.autonomia = autonomia;
+    public void disminuirAutonomia(){
+        this.autonomia -=2;
     }
 
     public Integer getProcesamiento(){
