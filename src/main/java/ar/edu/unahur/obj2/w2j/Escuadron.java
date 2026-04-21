@@ -17,7 +17,7 @@ public class Escuadron {
         if (ciudad.getCantidadMaxima() >= this.drones.size()) {
             throw new Exception("Supera la cantidad máxima definida por la ciudad.");
         }
-        this.drones.add(unDron);
+        drones.add(unDron);
     }
 
     public Boolean puedeOperarLaZona(Zona zona){

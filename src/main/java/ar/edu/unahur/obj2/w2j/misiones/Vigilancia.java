@@ -17,6 +17,9 @@ public class Vigilancia implements Mision{
         return sensores;
     }
 
+    public void aplicarUnDron(Sensor sensor){
+        sensores.add(sensor);
+    }
 
     @Override
     public Integer eficienciaOpExtra(){
