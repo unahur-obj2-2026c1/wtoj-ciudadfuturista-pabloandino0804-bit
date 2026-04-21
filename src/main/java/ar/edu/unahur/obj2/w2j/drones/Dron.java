@@ -29,7 +29,7 @@ public class Dron {
         return procesamiento;
     }
 
-    public Mision getmision(){
+    public Mision getMision(){
         return mision;
     }
 
