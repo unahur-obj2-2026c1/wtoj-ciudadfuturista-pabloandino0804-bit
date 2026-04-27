@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.w2j.TestsComunes;
+package ar.edu.unahur.obj2.w2j.testsDrones;
 
 import ar.edu.unahur.obj2.w2j.drones.*;
 import ar.edu.unahur.obj2.w2j.misiones.*;
@@ -9,10 +9,11 @@ import org.junit.jupiter.api.Test;
 
 public class DronesTest {
     @Test
-    public void elDronComercialNoEsAvanzadoSegunTipoPeroSiPorSuMisionCon60Autonomia(){
+    public void elDronComercialNoEsAvanzadoPeroSiEsDependiendoConSuMision(){
         Mision transporte = new Transporte();
         Dron dronComercial = new DronComercial(60, 120, transporte);
         assertFalse(dronComercial.esAvanzadoSegunTipo());
+        assertTrue(dronComercial.esAvanzado());
     }
 
     @Test
