@@ -1,9 +1,10 @@
 package ar.edu.unahur.obj2.w2j.testsDrones;
 
-import ar.edu.unahur.obj2.w2j.Sensor;
 import ar.edu.unahur.obj2.w2j.drones.*;
 import ar.edu.unahur.obj2.w2j.misiones.*;
 
+import java.util.List;
+import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -31,10 +32,11 @@ public class MisionesTest {
     public void misionVigilanciaOtorga750ConDosDrones(){
         Sensor sensor1 = new Sensor(250, 45, true);
         Sensor sensor2 = new Sensor(250, 45, false);
-        Mision vigilancia = new Vigilancia();
+        List<Sensor> sensores = new ArrayList<>();
+        sensores.add(sensor1);
+        sensores.add(sensor2);
+        Mision vigilancia = new Vigilancia(sensores);
         Dron miDron = new DronSeguridad(50, 200, vigilancia);
-        ((Vigilancia) vigilancia).añadirSensor(sensor1);
-        ((Vigilancia) vigilancia).añadirSensor(sensor2);
         assertEquals(750, vigilancia.eficienciaOpExtra());
         assertEquals(1250, miDron.eficiencia());
     }
@@ -60,10 +62,11 @@ public class MisionesTest {
     public void esAvanzadoEnVigilanciaCuandoTodosSusDronesSonDuraderos(){
         Sensor sensor1 = new Sensor(250, 600, true);
         Sensor sensor2 = new Sensor(250, 600, false);
-        Mision vigilancia = new Vigilancia();
+        List<Sensor> sensores = new ArrayList<>();
+        sensores.add(sensor1);
+        sensores.add(sensor2);
+        Mision vigilancia = new Vigilancia(sensores);
         Dron dronPrueba = new DronSeguridad(50, 200, vigilancia);
-        ((Vigilancia) vigilancia).añadirSensor(sensor1);
-        ((Vigilancia) vigilancia).añadirSensor(sensor2);
         assertTrue(vigilancia.esAvanzadoSegunMision(dronPrueba));
     }
 }

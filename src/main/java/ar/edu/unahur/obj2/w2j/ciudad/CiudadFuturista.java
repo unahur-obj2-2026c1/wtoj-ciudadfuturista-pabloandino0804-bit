@@ -1,7 +1,7 @@
-package ar.edu.unahur.obj2.w2j;
+package ar.edu.unahur.obj2.w2j.ciudad;
 
 public class CiudadFuturista {
-    private Integer cantMaxPorEscuadron = 10;
+    private Integer cantMaxPorEscuadron = 10;    
 
     public Integer getCantidadMaxima(){
         return cantMaxPorEscuadron;

@@ -1,7 +1,7 @@
 package ar.edu.unahur.obj2.w2j.misiones;
 
 import ar.edu.unahur.obj2.w2j.drones.Dron;
-import ar.edu.unahur.obj2.w2j.Sensor;
+import ar.edu.unahur.obj2.w2j.drones.Sensor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,16 @@ import java.util.List;
 public class Vigilancia implements Mision{
     private List<Sensor> sensores = new ArrayList<>();
 
-    public List<Sensor> cantSensores(){
+    public Vigilancia(List<Sensor> sensores){
+        this.sensores = sensores;
+    }
+
+    public List<Sensor> getSensores(){
         return sensores;
     }
 
-    public void añadirSensor(Sensor sensor){
-        sensores.add(sensor);
+    public void agregarSensor(Sensor sensor){
+        this.sensores.add(sensor);
     }
 
     @Override
