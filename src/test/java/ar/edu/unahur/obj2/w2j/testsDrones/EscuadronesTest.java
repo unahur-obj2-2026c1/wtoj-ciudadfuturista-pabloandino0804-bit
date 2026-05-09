@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unahur.obj2.w2j.Escuadron;
 import ar.edu.unahur.obj2.w2j.ciudad.*;
 import ar.edu.unahur.obj2.w2j.drones.*;
 import ar.edu.unahur.obj2.w2j.misiones.*;

@@ -1,9 +1,7 @@
-package ar.edu.unahur.obj2.w2j;
+package ar.edu.unahur.obj2.w2j.drones;
 
-import ar.edu.unahur.obj2.w2j.ciudad.CiudadFuturista;
-import ar.edu.unahur.obj2.w2j.ciudad.Zona;
-import ar.edu.unahur.obj2.w2j.drones.*;
-
+import ar.edu.unahur.obj2.w2j.ciudad.*;
+import ar.edu.unahur.obj2.w2j.excepciones.LimitSuperadoException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +22,9 @@ public class Escuadron {
         return drones;
     }
 
-    public void agregarDron(Dron unDron) throws Exception{
+    public void agregarDron(Dron unDron) throws LimitSuperadoException{
         if (this.drones.size() >= limite){
-            throw new Exception("Supera la cantidad máxima definida por la ciudad.");
+            throw new LimitSuperadoException("Supera la cantidad máxima definida por la ciudad.");
         }
         this.drones.add(unDron);
         
