@@ -44,7 +44,8 @@ public class EscuadronesTest {
         escuadronDrones.agregarDron(dron2);
         escuadronDrones.agregarDron(dron2);
         escuadronDrones.agregarDron(dron2);
-        assertTrue(escuadronDrones.getDrones().size() >= escuadronDrones.getCantidadMaxima());
+        escuadronDrones.agregarDron(dron2);
+        assertTrue(escuadronDrones.getDrones().size() > escuadronDrones.getCantidadMaxima());
     }
 
     @Test

@@ -23,7 +23,7 @@ public class Escuadron {
     }
 
     public void agregarDron(Dron unDron) throws LimitSuperadoException{
-        if (this.drones.size() >= limite){
+        if (this.drones.size() > limite){
             throw new LimitSuperadoException("Supera la cantidad máxima definida por la ciudad.");
         }
         this.drones.add(unDron);
