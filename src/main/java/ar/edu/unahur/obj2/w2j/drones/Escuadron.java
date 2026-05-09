@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Escuadron {
     private List<Dron> drones = new ArrayList<>();
-    private CiudadFuturista ciudad = new CiudadFuturista();
+    private CiudadFuturista ciudad;
     private Integer limite;
     
     public Escuadron(CiudadFuturista ciudad){

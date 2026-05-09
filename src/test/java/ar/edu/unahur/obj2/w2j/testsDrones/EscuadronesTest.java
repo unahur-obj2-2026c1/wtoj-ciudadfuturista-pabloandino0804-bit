@@ -1,6 +1,5 @@
 package ar.edu.unahur.obj2.w2j.testsDrones;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -20,7 +19,32 @@ public class EscuadronesTest {
         Escuadron escuadronDrones = new Escuadron(ciudad);
         escuadronDrones.agregarDron(dron1);
         escuadronDrones.agregarDron(dron2);
-        assertNotEquals(escuadronDrones.getDrones().size(), ciudad.getCantidadMaxima());
+        assertTrue(escuadronDrones.getDrones().size() < ciudad.getCantidadMaxima());
+    }
+
+    @Test
+    public void SiLaCantDeDronesSUperaElLimiteDaError() throws Exception{
+        Mision exploracion = new Exploracion();
+        CiudadFuturista ciudad = new CiudadFuturista();
+        ciudad.setCantidadMaxima(14);
+        Dron dron1= new DronComercial(100, 70, exploracion);
+        Dron dron2 = new DronSeguridad(50, 70, exploracion);
+        Escuadron escuadronDrones = new Escuadron(ciudad);
+        escuadronDrones.agregarDron(dron1);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron1);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron1);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron1);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron1);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron2);
+        escuadronDrones.agregarDron(dron2);
+        assertTrue(escuadronDrones.getDrones().size() >= escuadronDrones.getCantidadMaxima());
     }
 
     @Test
